@@ -1,4 +1,4 @@
-/* body {
+body {
     background: rgba(226, 193, 18, 1);
     margin: 0;
 }
@@ -47,6 +47,7 @@
     justify-content: center;
     align-items: center;
     margin: 20px auto;
+    position: relative; /* Ensure relative positioning for absolute children */
 }
 
 .container-row {
@@ -57,17 +58,7 @@
     margin-left: 130px;
 }
 
-.container2 {
-    width: 400px;
-    height: 303px;
-    border-radius: 10px;
-    background: rgba(125, 120, 120, 0.1);
-    border: 1px solid rgba(125, 120, 120, 1);
-    box-shadow: 0px 0px 10px 0px rgba(125, 120, 120, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .container3 {
     width: 450px;
@@ -79,6 +70,67 @@
     display: flex;
     justify-content: center;
     align-items: center;
-} */
+}
 
+#cityName {
+    color: rgba(255, 0, 107, 1);
+    font-size: 25px;
+    width: fit-content;
+    position: absolute; 
+    top: 10px;
+    left: 10px; 
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 5px; 
+   
+    
+}
+#temperature{
+    color: rgba(255, 200, 1, 1);
+    font-size: 40px;
+    width: fit-content;
+    position: absolute; 
+  
+    left: 10px; 
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 5px; 
+}
+#description-info{
+    color:white;
+    font-size: small;
+    font-family: Work sans;
+    /* right: 10px;  */
+    margin-top: 50px;
+    margin-left: 900px;
+    padding: 5px; 
 
+}
+.container2 {
+    width: 400px;
+    height: 303px;
+    border-radius: 10px;
+    background: rgba(125, 120, 120, 0.1);
+    border: 1px solid rgba(125, 120, 120, 1);
+    box-shadow: 0px 0px 10px 0px rgba(125, 120, 120, 0.5);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Space between items */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container2 > div {
+    background: rgba(0, 0, 0, 0.5);
+    width: 80px;
+    height: 100px;
+    text-align: center;
+    border-radius: 10px;
+    color: rgba(125, 120, 120, 1);
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-top: 0%;
+}
