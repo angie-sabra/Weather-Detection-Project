@@ -30,41 +30,60 @@ function displayWeather(data, cityName) {
     const descriptionElement = document.getElementById("description-info");
     cityElement.textContent = cityName;
 
- 
     const currentDate = new Date().toISOString().split('T')[0];
-
     let maxTemp = -Infinity;
     let minTemp = Infinity;
     let description = '';
 
-  
-    data.list.forEach(forecast => {
-        const forecastDate = forecast.dt_txt.split(' ')[0];
-        if (forecastDate === currentDate) {
-            maxTemp = Math.max(maxTemp, forecast.main.temp_max);
-            minTemp = Math.min(minTemp, forecast.main.temp_min);
-         
-            if (description === '') {
-                description = forecast.weather[0].description;
-            }
-        }
-    });
+    // Find today's weather details
+    const todayWeather = data.list.find(forecast => forecast.dt_txt.split(' ')[0] === currentDate);
 
-  
-    const firstForecast = data.list.find(forecast => forecast.dt_txt.split(' ')[0] === currentDate);
-    if (firstForecast) {
-        const temp = firstForecast.main.temp;
+    if (todayWeather) {
+        maxTemp = todayWeather.main.temp_max;
+        minTemp = todayWeather.main.temp_min;
+        const temp = todayWeather.main.temp;
+        description = todayWeather.weather[0].description;
+        
         temperatureElement.innerHTML = `${temp} °C <span style="color:white; font-size:20px;">overcast</span>`;
+        
+        // Update "Feels Like"
+        const feelsLikeElement = document.getElementById("feels_like");
+        if (feelsLikeElement) {
+            feelsLikeElement.innerHTML = `Feels like:<br><br> ${todayWeather.main.feels_like} °C`;
+        }
+
+        // Update Humidity
+        const humidityElement = document.getElementById("humidity");
+        if (humidityElement) {
+            humidityElement.innerHTML = `Humidity:<br><br> ${todayWeather.main.humidity}  %`;
+        }
+
+        // Update Wind Speed
+        const windElement = document.getElementById("wind");
+        if (windElement) {
+            windElement.innerHTML = `Wind: <br><br> ${todayWeather.wind.speed} m/s`;
+        }
+
+        // Update Visibility
+        const visibilityElement = document.getElementById("visibility");
+        if (visibilityElement) {
+            visibilityElement.innerHTML= `Visibility:<br><br> ${(todayWeather.visibility / 1000).toFixed(1)} km`;
+        }
+
+        // Update Pressure
+        const pressureElement = document.getElementById("pressure");
+        if (pressureElement) {
+            pressureElement.innerHTML = `Pressure: <br><br>${todayWeather.main.pressure} hPa`;
+        }
     } else {
         temperatureElement.textContent = 'No temperature data available for today';
     }
 
-    const Today = new Date().toISOString().split('T')[0];
-    const TodayName = getDayName(Today)
+    const today = new Date().toISOString().split('T')[0];
+    const todayName = getDayName(today);
     if (maxTemp !== -Infinity && minTemp !== Infinity) {
         descriptionElement.innerHTML = `
-      
-            ${TodayName} ${maxTemp} °   ${minTemp} ° <br><br>
+            ${todayName} ${maxTemp} °C   ${minTemp} °C <br><br>
             Air quality: ${description}
         `;
     } else {
@@ -77,4 +96,5 @@ function getDayName(dateString) {
     const options = { weekday: 'long' };
     return new Intl.DateTimeFormat('en-US', options).format(date);
 }
+
 
