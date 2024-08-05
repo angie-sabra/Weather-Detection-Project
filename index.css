@@ -1,1 +1,84 @@
+body {
+    background: rgba(226, 193, 18, 1);
+    margin: 0;
+}
+
+#rec11 {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    z-index: 10; 
+    text-align: center;
+}
+#rec12 {
+    position: fixed; 
+    bottom: 0; 
+    right: 0; 
+    z-index: 10; 
+    text-align: center;
+}
+#main-container {
+    max-width: 1200px; 
+    width: 100%; 
+    height: auto;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    margin-top: 75px;
+    background-image: url("images/dramatic-sky-mountain-silhouette-sunset-stunning-generated-by-ai\ 2\ \(1\).png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    z-index: 15;
+}
+
+.container1 {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(125, 120, 120, 1);
+    box-shadow: 0px 0px 20px 0px rgba(125, 120, 120, 1);
+    border-radius: 10px;
+    width: 1090px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.container-row {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 100px; 
+    margin-top: 20px;
+    margin-left: 130px;
+}
+
+.container2 {
+    width: 400px;
+    height: 303px;
+    border-radius: 10px;
+    background: rgba(125, 120, 120, 0.1);
+    border: 1px solid rgba(125, 120, 120, 1);
+    box-shadow: 0px 0px 10px 0px rgba(125, 120, 120, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container3 {
+    width: 450px;
+    height: 303px;
+    border-radius: 10px;
+    background: rgba(125, 120, 120, 0.1);
+    border: 1px solid rgba(125, 120, 120, 1);
+    box-shadow: 0px 0px 10px 0px rgba(125, 120, 120, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
