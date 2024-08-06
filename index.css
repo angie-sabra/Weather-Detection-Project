@@ -44,7 +44,7 @@ body {
     border: 1px solid rgba(125, 120, 120, 1);
     box-shadow: 0px 0px 20px 0px rgba(125, 120, 120, 1);
     border-radius: 10px;
-    width: 100%;
+    width: 100vw;/*asdfghgfdsdfgh*/
     max-width: 1090px;
     height: 200px;
     display: flex;
@@ -61,23 +61,24 @@ body {
     margin-top: 50px;
     flex-wrap: wrap; 
     margin-right: 50px;
-    margin-top: 0px; /*!!!!!!!*/
+    margin-top: 0px;
 }
 
 .container2 {
     width: 100%;
     max-width: 400px;
-    height: 203px;
+    height: auto; 
     border-radius: 10px;
     background: rgba(125, 120, 120, 0.1);
     border: 1px solid rgba(125, 120, 120, 1);
     box-shadow: 0px 0px 10px 0px rgba(125, 120, 120, 0.5);
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     padding: 10px;
     justify-content: center;
     align-items: center;
+    overflow: auto; 
 }
 
 .container3 {
@@ -92,20 +93,6 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.container2 > div {
-    background: rgba(0, 0, 0, 0.5);
-    width: 90px;
-    height: 80px;
-    text-align: center;
-    border-radius: 10px;
-    color: white;
-    font-size: small;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
 }
 
 #cityName {
@@ -148,25 +135,61 @@ body {
     font-family: 'Work Sans';
 }
 
+.grid-item {
+    background: rgba(0, 0, 0, 0.5);
+    width: 90px;
+    height: 80px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-size: small;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    padding: 10px;
+    margin-left: 40px;
+}
 
 @media (max-width: 768px) {
+    .grid-item {
+        background: rgba(0, 0, 0, 0.5);
+        width: 90px; 
+        height: 80px;
+        text-align: center;
+        border-radius: 10px;
+        color: white;
+        font-size: small;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        padding: 10px;
+    }
     #main-container {
         margin-top: 50px;
         padding: 10px;
     }
-
     .container1 {
         height: auto;
         flex-direction: column;
         padding: 10px;
     }
-
     #cityName, #temperature {
         font-size: 20px;
         position: relative;
         margin: 10px;
     }
-
     #description-info {
         font-size: small;
         text-align: center;
@@ -174,49 +197,55 @@ body {
         margin-left: 0;
         margin-right: 0;
     }
-
     .container-row {
         flex-direction: column;
         align-items: center;
         margin-left: 0;
     }
-
     #weather-details-title {
         margin-left: 0;
         text-align: center;
         margin-bottom: 0px;
-        
     }
-
     .container2 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
         gap: 10px;
     }
 }
-
 
 @media (max-width: 480px) {
     #cityName, #temperature {
         font-size: 18px;
         margin: 5px;
     }
-
     #description-info {
         font-size: x-small;
     }
-
     .container2, .container3 {
         width: 90%;
         margin: 10px 0;
     }
-
     .container2 {
         grid-template-columns: 1fr; 
     }
-
-    .container2 > div {
-        width: 70px;
-        height: 60px;
-        font-size: x-small;
+    .grid-item {
+        background: rgba(0, 0, 0, 0.5);
+        width: 90px;
+        height: 80px;
+        text-align: center;
+        border-radius: 10px;
+        color: white;
+        font-size: small;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr; 
+        padding: 10px;
     }
 }
+
+

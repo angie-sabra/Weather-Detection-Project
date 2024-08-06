@@ -85,7 +85,7 @@ function displayWeather(data, cityName) {
     const todayName = getDayName(today);
     if (maxTemp !== -Infinity && minTemp !== Infinity) {
         descriptionElement.innerHTML = `
-            ${todayName} ${maxTemp} °C   ${minTemp} °C <br><br>
+            ${todayName} ${maxTemp} °   ${minTemp} ° <br><br>
             Air quality: ${description}
         `;
     } else {
