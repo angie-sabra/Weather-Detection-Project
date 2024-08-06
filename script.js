@@ -49,7 +49,9 @@ function displayWeather(data, cityName) {
         // Update "Feels Like"
         const feelsLikeElement = document.getElementById("feels_like");
         if (feelsLikeElement) {
-            feelsLikeElement.innerHTML = `Feels like:<br><br> ${todayWeather.main.feels_like} °C`;
+            feelsLikeElement.innerHTML += `Feels like:<br><br> `;
+            feelsLikeElement.innerHTML += `${todayWeather.main.feels_like} °`;
+
         }
 
         // Update Humidity
@@ -61,13 +63,13 @@ function displayWeather(data, cityName) {
         // Update Wind Speed
         const windElement = document.getElementById("wind");
         if (windElement) {
-            windElement.innerHTML = `Wind: <br><br> ${todayWeather.wind.speed} m/s`;
+            windElement.innerHTML = `Wind: <br><br> ${todayWeather.wind.speed} min/h`;
         }
 
         // Update Visibility
         const visibilityElement = document.getElementById("visibility");
         if (visibilityElement) {
-            visibilityElement.innerHTML= `Visibility:<br><br> ${(todayWeather.visibility / 1000).toFixed(1)} km`;
+            visibilityElement.innerHTML = `Visibility:<br><br> ${(todayWeather.visibility / 1000).toFixed(1)} mi`;
         }
 
         // Update Pressure

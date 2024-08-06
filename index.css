@@ -24,7 +24,7 @@ body {
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8);
     margin: 0 auto;
-    margin-top: 75px;
+    margin-top: 70px;
     background-image: url("images/dramatic-sky-mountain-silhouette-sunset-stunning-generated-by-ai\ 2\ \(1\).png");
     background-size: cover;
     background-position: center;
@@ -47,7 +47,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px auto;
-    position: relative; /* Ensure relative positioning for absolute children */
+    position: relative;
 }
 
 .container-row {
@@ -61,8 +61,8 @@ body {
 
 
 .container3 {
-    width: 450px;
-    height: 303px;
+    width: 400px;
+    height: 203px;
     border-radius: 10px;
     background: rgba(125, 120, 120, 0.1);
     border: 1px solid rgba(125, 120, 120, 1);
@@ -70,6 +70,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+
+    
 }
 
 #cityName {
@@ -108,7 +111,7 @@ body {
 }
 .container2 {
     width: 400px;
-    height: 303px;
+    height: 203px;
     border-radius: 10px;
     background: rgba(125, 120, 120, 0.1);
     border: 1px solid rgba(125, 120, 120, 1);
@@ -127,10 +130,18 @@ body {
     height: 80px;
     text-align: center;
     border-radius: 10px;
-    color: rgba(125, 120, 120, 1);
+    color: white;
     font-size: small;
     display: flex;
     justify-content: center;
     align-items: center;
    margin-top: 0%;
+}
+#weather-details-title{
+        font-size: large;
+        color:rgba(255, 255, 255, 1);
+        /* box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8); */
+        margin-left: 150px;
+        font-family: work sans;
+
 }
