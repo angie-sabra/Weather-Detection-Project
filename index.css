@@ -225,18 +225,15 @@ body,html{
 }
 
 @media (max-width: 480px) {
-    #cityName, #temperature {
-        font-size: 18px;
-        margin: 5px;
-    }
-    #description-info {
-        font-size: x-small;
-    }
     .container2, .container3 {
-        width: auto;
-        margin: 10px 0;
+        width: auto; /* Set width to auto for both containers */
+        margin: 10px 0; /* Add some margin for spacing */
     }
     .container2 {
+        grid-template-columns: 1fr; 
+        overflow: auto;
+    }
+    .container3 {
         grid-template-columns: 1fr; 
         overflow: auto;
     }
@@ -259,5 +256,6 @@ body,html{
         padding: 10px;
     }
 }
+
 
 
