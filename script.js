@@ -44,7 +44,7 @@ function displayWeather(data, cityName) {
         const temp = todayWeather.main.temp;
         description = todayWeather.weather[0].description;
         
-        temperatureElement.innerHTML = `${temp} °C <span style="color:white; font-size:20px;">overcast</span>`;
+        temperatureElement.innerHTML = `${temp} ° <span style="color:white; font-size:20px;">overcast</span>`;
         
         // Update "Feels Like"
         const feelsLikeElement = document.getElementById("feels_like");
