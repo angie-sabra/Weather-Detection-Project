@@ -38,6 +38,10 @@ function displayWeather(data, cityName) {
     // Find today's weather details
     const todayWeather = data.list.find(forecast => forecast.dt_txt.split(' ')[0] === currentDate);
 
+
+
+
+
     if (todayWeather) {
         maxTemp = todayWeather.main.temp_max;
         minTemp = todayWeather.main.temp_min;
@@ -45,7 +49,28 @@ function displayWeather(data, cityName) {
         description = todayWeather.weather[0].description;
         
         temperatureElement.innerHTML = `${temp} ° <span style="color:white; font-size:20px;">overcast</span>`;
-        
+
+          //Update "Wind Gust"
+           
+        const windGust = document.getElementById("wind-gust");
+        if (windGust) {
+            windGust.innerHTML = `Gust:<br><br> ${todayWeather.wind.gust || 'N/A'} m/s`;
+        }
+        //Update "Sea Level"
+        const seaLevel = document.getElementById("sea-level");
+        if(seaLevel){
+            seaLevel.innerHTML +=  `Sea level:<br><br> `;
+            seaLevel.innerHTML += `${todayWeather.main.sea_level} °`;
+        }
+
+        //Update "Ground level"
+        const grndLevel = document.getElementById("grnd-level");
+        if(seaLevel){
+            grndLevel.innerHTML +=  `Grnd level:<br><br> `;
+            grndLevel.innerHTML += `${todayWeather.main.grnd_level} ft2`;
+        }
+
+
         // Update "Feels Like"
         const feelsLikeElement = document.getElementById("feels_like");
         if (feelsLikeElement) {
