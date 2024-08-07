@@ -3,9 +3,7 @@ body {
     margin: 0;
     font-family: 'Work Sans', sans-serif;
 }
-body,html{
-    overflow: hidden;
-}
+
 #rec11, #rec12 {
     position: fixed;
     z-index: 10;
